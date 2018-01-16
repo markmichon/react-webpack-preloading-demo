@@ -5,8 +5,6 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activePagePath: "./Home",
-      activePageName: "Home",
       ActiveComponent: null
     }
   }
