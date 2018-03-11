@@ -14,7 +14,6 @@ class App extends Component {
     // console.log(Routes.Home.load())
   }
 
-  renderPage(pageName) {}
   setPage(Page) {
     // console.log(Page)
     // console.log(Routes["Home"].load)
@@ -26,7 +25,7 @@ class App extends Component {
   }
 
   preloadPage(Page) {
-    // Page.load()
+    Routes[Page].load()
   }
 
   render() {
@@ -36,7 +35,12 @@ class App extends Component {
         <button onClick={() => this.setPage("Home")}>Home</button>
         <button onClick={() => this.setPage("About")}>About</button>
         <button onClick={() => this.setPage("Blog")}>Blog</button>
-        <button onClick={() => this.setPage("Contact")}>Contact</button>
+        <button
+          onClick={() => this.setPage("Contact")}
+          onMouseEnter={() => this.preloadPage("Contact")}
+        >
+          Contact
+        </button>
         {ActiveComponent ? <ActiveComponent /> : null}
       </div>
     )

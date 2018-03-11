@@ -1,6 +1,6 @@
-import lazy from "./Lazy"
+import preload from "./Preloader"
 
-export const Home = lazy(() => import("./components/views/Home.js"))
-export const About = lazy(() => import("./components/views/About.js"))
-export const Blog = lazy(() => import("./components/views/Blog.js"))
-export const Contact = lazy(() => import("./components/views/Contact.js"))
+export const Home = preload(() => import("./components/views/Home.js"))
+export const About = preload(() => import("./components/views/About.js"))
+export const Blog = preload(() => import("./components/views/Blog.js"))
+export const Contact = preload(() => import("./components/views/Contact.js"))

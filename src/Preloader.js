@@ -1,11 +1,11 @@
-import React, { Component } from "react"
+import React from "react"
 
 export default (importModule, customProps = {}) => {
-  class Lazy extends Component {
+  class Preloader extends React.Component {
     constructor() {
       super()
       this.state = {
-        Lazy: null
+        Component: null
       }
       this.Comp = null
       this.loadingPromise = null
@@ -35,16 +35,16 @@ export default (importModule, customProps = {}) => {
     }
 
     handleImport(Comp) {
-      const Lazy = Comp.default ? Comp.default : Comp
+      const Preload = Comp.default ? Comp.default : Comp
       this.setState({
-        Lazy: <Lazy {...this.props} {...customProps} />
+        Component: <Preload {...this.props} {...customProps} />
       })
     }
 
     render() {
-      const { Lazy } = this.state
-      return Lazy
+      const { Component } = this.state
+      return Component
     }
   }
-  return Lazy
+  return Preloader
 }
