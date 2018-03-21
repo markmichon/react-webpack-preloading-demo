@@ -2,6 +2,8 @@
 
 Code splitting is a great feature of modern bundlers, but sometimes you don't want all the bundles loading in the background.
 
+Demo includes functionality for on-demand loading of page modules, via click or hover.
+
 _note_: This is meant to act as a conceptual demo, and for brevity is not optimized for production applications.
 
 ## Setup
